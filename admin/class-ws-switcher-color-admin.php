@@ -163,17 +163,16 @@ class WS_Switcher_Color_Admin {
 		$tab = isset( $_POST['ws_save_tab'] ) ? sanitize_key( wp_unslash( $_POST['ws_save_tab'] ) ) : 'mappings';
 
 		if ( 'mappings' === $tab ) {
-			$numbers  = isset( $_POST['ws_mapping_number'] ) ? (array) wp_unslash( $_POST['ws_mapping_number'] ) : array();
+			$vars     = isset( $_POST['ws_mapping_var'] ) ? (array) wp_unslash( $_POST['ws_mapping_var'] ) : array();
 			$labels   = isset( $_POST['ws_mapping_label'] ) ? (array) wp_unslash( $_POST['ws_mapping_label'] ) : array();
 			$darks    = isset( $_POST['ws_mapping_dark'] ) ? (array) wp_unslash( $_POST['ws_mapping_dark'] ) : array();
 			$lights   = isset( $_POST['ws_mapping_light'] ) ? (array) wp_unslash( $_POST['ws_mapping_light'] ) : array();
-			$mappings = WS_Switcher_Color_Sanitizer::mappings( $numbers, $labels, $darks, $lights );
+			$mappings = WS_Switcher_Color_Sanitizer::mappings( $vars, $labels, $darks, $lights );
 			update_option( WS_SWITCHER_COLOR_OPT_MAPPINGS, $mappings );
 		}
 
 		if ( 'settings' === $tab ) {
 			$raw      = array(
-				'var_prefix'      => isset( $_POST['ws_var_prefix'] ) ? wp_unslash( $_POST['ws_var_prefix'] ) : '',
 				'light_class'     => isset( $_POST['ws_light_class'] ) ? wp_unslash( $_POST['ws_light_class'] ) : '',
 				'default_mode'    => isset( $_POST['ws_default_mode'] ) ? wp_unslash( $_POST['ws_default_mode'] ) : '',
 				'toggle_position' => isset( $_POST['ws_toggle_position'] ) ? wp_unslash( $_POST['ws_toggle_position'] ) : '',

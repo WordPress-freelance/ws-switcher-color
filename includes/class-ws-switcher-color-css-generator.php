@@ -18,8 +18,8 @@ class WS_Switcher_Color_CSS_Generator {
 	/**
 	 * Génère le CSS d'override mode light.
 	 *
-	 * @param array $mappings Liste de mappings (number, label, dark, light).
-	 * @param array $settings Réglages (var_prefix, light_class...).
+	 * @param array $mappings Liste de mappings (var|number, label, dark, light).
+	 * @param array $settings Réglages (light_class, force_important...).
 	 * @return string CSS, ou chaîne vide si aucun mapping.
 	 */
 	public static function generate( array $mappings, array $settings ) {
@@ -31,18 +31,25 @@ class WS_Switcher_Color_CSS_Generator {
 		$class  = isset( $settings['light_class'] ) ? $settings['light_class'] : 'ws-light';
 		$bang   = ! empty( $settings['force_important'] ) ? ' !important' : '';
 
-		$lines   = array();
-		$lines[] = "html.{$class} {";
-
+		$decls = array();
 		foreach ( $mappings as $m ) {
-			if ( ! isset( $m['number'], $m['light'] ) ) {
+			if ( ! isset( $m['light'] ) ) {
 				continue;
 			}
-			$number  = (int) $m['number'];
-			$value   = $m['light'];
-			$lines[] = "  --{$prefix}{$number}: {$value}{$bang};";
+			$var = WS_Switcher_Color_Defaults::resolve_var( $m, $prefix );
+			if ( '' === $var ) {
+				continue;
+			}
+			$decls[] = "  {$var}: {$m['light']}{$bang};";
 		}
 
+		if ( empty( $decls ) ) {
+			return '';
+		}
+
+		$lines   = array();
+		$lines[] = "html.{$class} {";
+		$lines   = array_merge( $lines, $decls );
 		$lines[] = '}';
 		$lines[] = '';
 		$lines[] = '*, *::before, *::after {';

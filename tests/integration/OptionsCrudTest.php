@@ -25,8 +25,8 @@ class OptionsCrudTest extends WP_UnitTestCase {
 		$mappings = get_option( WS_SWITCHER_COLOR_OPT_MAPPINGS, WS_Switcher_Color_Defaults::mappings() );
 		$settings = get_option( WS_SWITCHER_COLOR_OPT_SETTINGS, WS_Switcher_Color_Defaults::settings() );
 
-		$this->assertCount( 15, $mappings );
-		$this->assertSame( 'awb-color', $settings['var_prefix'] );
+		$this->assertCount( 8, $mappings );
+		$this->assertSame( 'ws-light', $settings['light_class'] );
 		$this->assertSame( 'dark', $settings['default_mode'] );
 		$this->assertTrue( $settings['toggle_enabled'] );
 	}
@@ -52,13 +52,13 @@ class OptionsCrudTest extends WP_UnitTestCase {
 	public function test_read_preserves_structure() {
 		$mappings = array(
 			array(
-				'number' => 1,
+				'var'   => '--awb-color1',
 				'label'  => 'Texte principal',
 				'dark'   => '#f0ede8',
 				'light'  => '#14121c',
 			),
 			array(
-				'number' => 7,
+				'var'   => '--awb-color7',
 				'label'  => 'Surface',
 				'dark'   => '#1a1724',
 				'light'  => '#ede9e0',
@@ -69,7 +69,7 @@ class OptionsCrudTest extends WP_UnitTestCase {
 
 		$stored = get_option( WS_SWITCHER_COLOR_OPT_MAPPINGS );
 		$this->assertSame( $mappings, $stored );
-		$this->assertSame( 1, $stored[0]['number'] );
+		$this->assertSame( '--awb-color1', $stored[0]['var'] );
 		$this->assertSame( '#14121c', $stored[0]['light'] );
 	}
 
@@ -112,7 +112,7 @@ class OptionsCrudTest extends WP_UnitTestCase {
 	public function test_special_chars_in_label_round_trip() {
 		$mappings = array(
 			array(
-				'number' => 1,
+				'var'   => '--awb-color1',
 				'label'  => "Accent é à — \"guillemets\" & <balise>",
 				'dark'   => '#000000',
 				'light'  => '#ffffff',

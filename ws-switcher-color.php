@@ -3,7 +3,7 @@
  * Plugin Name:       WS Color Switcher
  * Plugin URI:        https://wordpress-freelance.com/plugins/ws-switcher-color/
  * Description:       Bascule dark/light pour Avada par remappage des variables CSS (--awb-colorN). Bouton flottant, shortcode, anti-FOUC, persistance localStorage.
- * Version:           1.2.0
+ * Version:           1.3.0
  * Author:            WebStrategy
  * Author URI:        https://wordpress-freelance.com
  * License:           GPL-2.0-or-later
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'WS_SWITCHER_COLOR_VERSION', '1.2.0' );
+define( 'WS_SWITCHER_COLOR_VERSION', '1.3.0' );
 define( 'WS_SWITCHER_COLOR_SLUG', 'ws-switcher-color' );
 define( 'WS_SWITCHER_COLOR_FILE', __FILE__ );
 define( 'WS_SWITCHER_COLOR_PATH', plugin_dir_path( __FILE__ ) );

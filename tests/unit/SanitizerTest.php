@@ -16,33 +16,53 @@ class SanitizerTest extends WebStrategyTestCase {
 
 	public function test_mappings_builds_clean_rows() {
 		$out = WS_Switcher_Color_Sanitizer::mappings(
-			array( '2', '1' ),
-			array( 'Deux', 'Un' ),
+			array( '--awb-color8', 'awb-custom15' ),
+			array( 'Fond', 'Footer' ),
 			array( '#222222', '#111111' ),
 			array( '#aaaaaa', '#bbbbbb' )
 		);
 
 		$this->assertCount( 2, $out );
-		// Trié par numéro.
-		$this->assertSame( 1, $out[0]['number'] );
-		$this->assertSame( 2, $out[1]['number'] );
-		$this->assertSame( 'Un', $out[0]['label'] );
+		$this->assertSame( '--awb-color8', $out[0]['var'] );
+		$this->assertSame( '--awb-custom15', $out[1]['var'], 'Le préfixe -- est forcé.' );
+		$this->assertSame( 'Fond', $out[0]['label'] );
 	}
 
-	public function test_mappings_skips_zero_and_negative_numbers() {
+	public function test_mappings_skips_empty_variable_names() {
 		$out = WS_Switcher_Color_Sanitizer::mappings(
-			array( '0', '-3', '4' ),
+			array( '', '   ', '--awb-color1' ),
 			array( 'a', 'b', 'c' ),
 			array( '#000000', '#000000', '#000000' ),
 			array( '#ffffff', '#ffffff', '#ffffff' )
 		);
 		$this->assertCount( 1, $out );
-		$this->assertSame( 4, $out[0]['number'] );
+		$this->assertSame( '--awb-color1', $out[0]['var'] );
+	}
+
+	public function test_mappings_strips_invalid_chars_in_var() {
+		$out = WS_Switcher_Color_Sanitizer::mappings(
+			array( 'awb-color8; color:red' ),
+			array( 'x' ),
+			array( '#000000' ),
+			array( '#ffffff' )
+		);
+		$this->assertSame( '--awb-color8colorred', $out[0]['var'] );
+	}
+
+	public function test_mappings_preserves_order() {
+		$out = WS_Switcher_Color_Sanitizer::mappings(
+			array( '--awb-color8', '--awb-color1' ),
+			array( 'Huit', 'Un' ),
+			array( '#222222', '#111111' ),
+			array( '#aaaaaa', '#bbbbbb' )
+		);
+		$this->assertSame( '--awb-color8', $out[0]['var'] );
+		$this->assertSame( '--awb-color1', $out[1]['var'] );
 	}
 
 	public function test_mappings_falls_back_on_empty_colors() {
 		$out = WS_Switcher_Color_Sanitizer::mappings(
-			array( '1' ),
+			array( '--awb-color1' ),
 			array( 'x' ),
 			array( '' ),
 			array( '' )
@@ -54,18 +74,17 @@ class SanitizerTest extends WebStrategyTestCase {
 	public function test_settings_keeps_valid_values() {
 		$out = WS_Switcher_Color_Sanitizer::settings(
 			array(
-				'var_prefix'      => 'my-color',
 				'light_class'     => 'clair',
 				'default_mode'    => 'light',
 				'toggle_position' => 'top-left',
 				'toggle_enabled'  => '1',
 			)
 		);
-		$this->assertSame( 'my-color', $out['var_prefix'] );
 		$this->assertSame( 'clair', $out['light_class'] );
 		$this->assertSame( 'light', $out['default_mode'] );
 		$this->assertSame( 'top-left', $out['toggle_position'] );
 		$this->assertTrue( $out['toggle_enabled'] );
+		$this->assertArrayNotHasKey( 'var_prefix', $out );
 	}
 
 	public function test_settings_rejects_invalid_mode() {

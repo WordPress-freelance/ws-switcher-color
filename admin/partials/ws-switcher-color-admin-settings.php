@@ -22,22 +22,6 @@ $ws_positions = array(
 <div class="ws-section">
 	<table class="ws-form">
 		<tr>
-			<th><label for="ws_var_prefix"><?php esc_html_e( 'Préfixe des variables CSS', 'ws-switcher-color' ); ?></label></th>
-			<td>
-				<input type="text" id="ws_var_prefix" name="ws_var_prefix" value="<?php echo esc_attr( $settings['var_prefix'] ); ?>" class="ws-input ws-input-text">
-				<p class="ws-desc">
-					<?php
-					printf(
-						/* translators: 1: exemple de préfixe, 2: variable générée. */
-						esc_html__( 'Ex : %1$s génère %2$s, etc.', 'ws-switcher-color' ),
-						'<code>awb-color</code>',
-						'<code>--awb-color1</code>'
-					);
-					?>
-				</p>
-			</td>
-		</tr>
-		<tr>
 			<th><label for="ws_light_class"><?php esc_html_e( 'Classe CSS mode light', 'ws-switcher-color' ); ?></label></th>
 			<td>
 				<input type="text" id="ws_light_class" name="ws_light_class" value="<?php echo esc_attr( $settings['light_class'] ); ?>" class="ws-input ws-input-text">

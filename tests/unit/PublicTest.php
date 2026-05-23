@@ -65,7 +65,7 @@ class PublicTest extends WebStrategyTestCase {
 	public function test_enqueue_styles_registers_and_injects_css() {
 		$this->mock_options(
 			WS_Switcher_Color_Defaults::settings(),
-			array( array( 'number' => 1, 'light' => '#ffffff' ) )
+			array( array( 'var' => '--awb-color1', 'light' => '#ffffff' ) )
 		);
 		WP_Mock::userFunction( 'wp_enqueue_style', array( 'times' => 1 ) );
 

@@ -4,7 +4,7 @@ Tags: dark mode, light mode, avada, color switcher, css variables
 Requires at least: 5.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,10 @@ Yes. The selected mode is stored in localStorage and re-applied before the page 
 
 == Changelog ==
 
+= 1.3.0 =
+* Mappings now target CSS variables by their full name (e.g. --awb-color8, --awb-custom15, --awb-custom_color_1) instead of a prefix + number. This handles Avada sites that mix palette colors and custom colors. Existing mappings are migrated transparently.
+* Removed the "CSS variable prefix" setting (no longer needed).
+
 = 1.2.0 =
 * New "Force CSS" setting: adds !important to every generated variable, to override themes that redefine the colors with higher priority.
 
@@ -82,6 +86,9 @@ Yes. The selected mode is stored in localStorage and re-applied before the page 
 * Initial release: dark / light switcher for Avada, floating button, shortcode, anti-FOUC, localStorage persistence.
 
 == Upgrade Notice ==
+
+= 1.3.0 =
+Mappings now use full CSS variable names and support Avada custom colors. Your existing settings are migrated automatically.
 
 = 1.2.0 =
 Adds an optional "Force CSS" toggle. Existing mappings and settings are preserved.

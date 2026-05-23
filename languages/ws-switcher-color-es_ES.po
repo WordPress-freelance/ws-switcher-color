@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: WS Color Switcher 1.2.0\n"
+"Project-Id-Version: WS Color Switcher 1.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress-freelance.com\n"
-"POT-Creation-Date: 2026-05-23 08:31+0000\n"
-"PO-Revision-Date: 2026-05-23 08:31+0000\n"
+"POT-Creation-Date: 2026-05-23 16:10+0000\n"
+"PO-Revision-Date: 2026-05-23 16:10+0000\n"
 "Last-Translator: WebStrategy <support@wordpress-freelance.com>\n"
 "Language-Team: WebStrategy <support@wordpress-freelance.com>\n"
 "Language: es_ES\n"
@@ -36,65 +36,56 @@ msgid "Masqué — shortcode uniquement"
 msgstr "Oculto — solo shortcode"
 
 #: admin/partials/ws-switcher-color-admin-settings.php:25
-msgid "Préfixe des variables CSS"
-msgstr "Prefijo de las variables CSS"
-
-#: admin/partials/ws-switcher-color-admin-settings.php:32
-#, php-format
-msgid "Ex : %1$s génère %2$s, etc."
-msgstr "Ej.: %1$s genera %2$s, etc."
-
-#: admin/partials/ws-switcher-color-admin-settings.php:41
 msgid "Classe CSS mode light"
 msgstr "Clase CSS del modo claro"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:48
+#: admin/partials/ws-switcher-color-admin-settings.php:32
 #, php-format
 msgid "Classe ajoutée sur la balise html en mode light. Le CSS cible %s."
 msgstr "Clase añadida a la etiqueta html en modo claro. El CSS apunta a %s."
 
-#: admin/partials/ws-switcher-color-admin-settings.php:56
+#: admin/partials/ws-switcher-color-admin-settings.php:40
 msgid "Mode par défaut"
 msgstr "Modo por defecto"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:59
+#: admin/partials/ws-switcher-color-admin-settings.php:43
 msgid "Dark (recommandé)"
 msgstr "Oscuro (recomendado)"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:60
+#: admin/partials/ws-switcher-color-admin-settings.php:44
 msgid "Light"
 msgstr "Claro"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:62
+#: admin/partials/ws-switcher-color-admin-settings.php:46
 msgid "Mode affiché aux nouveaux visiteurs sans préférence enregistrée."
 msgstr "Modo mostrado a los nuevos visitantes sin preferencia guardada."
 
-#: admin/partials/ws-switcher-color-admin-settings.php:66
+#: admin/partials/ws-switcher-color-admin-settings.php:50
 msgid "Bouton toggle"
 msgstr "Botón de cambio"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:70
+#: admin/partials/ws-switcher-color-admin-settings.php:54
 msgid "Afficher le bouton flottant sur le frontend"
 msgstr "Mostrar el botón flotante en el frontend"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:75
+#: admin/partials/ws-switcher-color-admin-settings.php:59
 msgid "Position du bouton"
 msgstr "Posición del botón"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:86
+#: admin/partials/ws-switcher-color-admin-settings.php:70
 #, php-format
 msgid "Ou placez le bouton manuellement avec le shortcode %s (bloc HTML Avada par exemple)."
 msgstr "O coloca el botón manualmente con el shortcode %s (bloque HTML de Avada, por ejemplo)."
 
-#: admin/partials/ws-switcher-color-admin-settings.php:94
+#: admin/partials/ws-switcher-color-admin-settings.php:78
 msgid "Forcer le CSS"
 msgstr "Forzar el CSS"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:98
+#: admin/partials/ws-switcher-color-admin-settings.php:82
 msgid "Ajouter !important sur toutes les variables (mode test)"
 msgstr "Añadir !important a todas las variables (modo de prueba)"
 
-#: admin/partials/ws-switcher-color-admin-settings.php:100
+#: admin/partials/ws-switcher-color-admin-settings.php:84
 msgid "À activer si le thème ou Avada redéfinit les couleurs avec une priorité plus forte et que la bascule ne prend pas. À laisser désactivé en temps normal."
 msgstr "Actívalo si el tema o Avada redefine los colores con mayor prioridad y el cambio no surte efecto. Déjalo desactivado en condiciones normales."
 
@@ -147,12 +138,12 @@ msgstr[1] "%d variables — generadas desde las asignaciones guardadas."
 
 #: admin/partials/ws-switcher-color-admin-mappings.php:20
 #, php-format
-msgid "Chaque ligne mappe une variable CSS %s. La colonne Dark est la valeur actuelle du site, la colonne Light la remplace quand le mode light est actif."
-msgstr "Cada fila asigna una variable CSS %s. La columna Oscuro es el valor actual del sitio; la columna Claro lo reemplaza cuando el modo claro está activo."
+msgid "Chaque ligne cible une variable CSS par son nom complet (ex. %s). La colonne Dark est la valeur actuelle du site, la colonne Light la remplace quand le mode light est actif."
+msgstr "Cada fila apunta a una variable CSS por su nombre completo (ej. %s). La columna Oscuro es el valor actual del sitio; la columna Claro lo reemplaza cuando el modo claro está activo."
 
 #: admin/partials/ws-switcher-color-admin-mappings.php:29
-msgid "N°"
-msgstr "N.º"
+msgid "Variable CSS"
+msgstr "Variable CSS"
 
 #: admin/partials/ws-switcher-color-admin-mappings.php:30
 msgid "Label"
@@ -166,15 +157,15 @@ msgstr "Oscuro (valor actual)"
 msgid "Light (override)"
 msgstr "Claro (anulación)"
 
-#: admin/partials/ws-switcher-color-admin-mappings.php:48
+#: admin/partials/ws-switcher-color-admin-mappings.php:49
 msgid "Supprimer"
 msgstr "Eliminar"
 
-#: admin/partials/ws-switcher-color-admin-mappings.php:57
+#: admin/partials/ws-switcher-color-admin-mappings.php:58
 msgid "+ Ajouter une variable"
 msgstr "+ Añadir una variable"
 
-#: admin/partials/ws-switcher-color-admin-mappings.php:63
+#: admin/partials/ws-switcher-color-admin-mappings.php:64
 #, php-format
 msgid "%d variable configurée"
 msgid_plural "%d variables configurées"

@@ -53,19 +53,18 @@
 	var addBtn = document.getElementById( 'ws-add-row' );
 	if ( addBtn && body ) {
 		addBtn.addEventListener( 'click', function () {
-			var rows = body.querySelectorAll( 'tr' );
-			var last = rows[ rows.length - 1 ];
-			var lastN = last ? ( parseInt( last.querySelector( 'input[type=number]' ).value, 10 ) || 0 ) : 0;
-			var next = lastN + 1;
-
 			var tr = document.createElement( 'tr' );
 			tr.innerHTML =
-				'<td><input type="number" name="ws_mapping_number[]" value="' + next + '" min="1" max="999" class="ws-input ws-input-num"></td>' +
+				'<td><input type="text" name="ws_mapping_var[]" value="" placeholder="--awb-color8" spellcheck="false" class="ws-input ws-input-var"></td>' +
 				'<td><input type="text" name="ws_mapping_label[]" value="' + L.newVar + '" class="ws-input ws-input-label"></td>' +
 				'<td>' + colorField( 'ws_mapping_dark[]', '#000000' ) + '</td>' +
 				'<td>' + colorField( 'ws_mapping_light[]', '#ffffff' ) + '</td>' +
 				'<td class="ws-col-action"><button type="button" class="ws-remove-row">&times;</button></td>';
 			body.appendChild( tr );
+			var input = tr.querySelector( '.ws-input-var' );
+			if ( input ) {
+				input.focus();
+			}
 		} );
 	}
 

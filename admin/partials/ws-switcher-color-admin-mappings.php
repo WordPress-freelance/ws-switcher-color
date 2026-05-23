@@ -16,9 +16,9 @@ if ( ! defined( 'WPINC' ) ) {
 	<p class="ws-help">
 		<?php
 		printf(
-			/* translators: %s: préfixe des variables CSS. */
-			esc_html__( 'Chaque ligne mappe une variable CSS %s. La colonne Dark est la valeur actuelle du site, la colonne Light la remplace quand le mode light est actif.', 'ws-switcher-color' ),
-			'<code>--' . esc_html( $settings['var_prefix'] ) . 'N</code>'
+			/* translators: %s: exemple de nom de variable CSS. */
+			esc_html__( 'Chaque ligne cible une variable CSS par son nom complet (ex. %s). La colonne Dark est la valeur actuelle du site, la colonne Light la remplace quand le mode light est actif.', 'ws-switcher-color' ),
+			'<code>--awb-color8</code>'
 		);
 		?>
 	</p>
@@ -26,7 +26,7 @@ if ( ! defined( 'WPINC' ) ) {
 	<table class="ws-table" id="ws-mappings-table">
 		<thead>
 			<tr>
-				<th class="ws-col-num"><?php esc_html_e( 'N°', 'ws-switcher-color' ); ?></th>
+				<th class="ws-col-var"><?php esc_html_e( 'Variable CSS', 'ws-switcher-color' ); ?></th>
 				<th><?php esc_html_e( 'Label', 'ws-switcher-color' ); ?></th>
 				<th class="ws-col-color"><?php esc_html_e( 'Dark (valeur actuelle)', 'ws-switcher-color' ); ?></th>
 				<th class="ws-col-color"><?php esc_html_e( 'Light (override)', 'ws-switcher-color' ); ?></th>
@@ -35,12 +35,13 @@ if ( ! defined( 'WPINC' ) ) {
 		</thead>
 		<tbody id="ws-mappings-body">
 			<?php foreach ( $mappings as $ws_m ) : ?>
+				<?php $ws_var = WS_Switcher_Color_Defaults::resolve_var( $ws_m ); ?>
 				<tr>
 					<td>
-						<input type="number" name="ws_mapping_number[]" value="<?php echo esc_attr( (int) $ws_m['number'] ); ?>" min="1" max="999" class="ws-input ws-input-num">
+						<input type="text" name="ws_mapping_var[]" value="<?php echo esc_attr( $ws_var ); ?>" placeholder="--awb-color8" spellcheck="false" class="ws-input ws-input-var">
 					</td>
 					<td>
-						<input type="text" name="ws_mapping_label[]" value="<?php echo esc_attr( $ws_m['label'] ); ?>" class="ws-input ws-input-label">
+						<input type="text" name="ws_mapping_label[]" value="<?php echo esc_attr( isset( $ws_m['label'] ) ? $ws_m['label'] : '' ); ?>" class="ws-input ws-input-label">
 					</td>
 					<td><?php WS_Switcher_Color_Admin::color_field( 'ws_mapping_dark[]', $ws_m['dark'] ); ?></td>
 					<td><?php WS_Switcher_Color_Admin::color_field( 'ws_mapping_light[]', $ws_m['light'] ); ?></td>

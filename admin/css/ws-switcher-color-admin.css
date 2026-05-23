@@ -145,7 +145,7 @@
 .ws-switcher-color-page .ws-table tbody tr:last-child td {
 	border-bottom: none;
 }
-.ws-switcher-color-page .ws-col-num { width: 70px; }
+.ws-switcher-color-page .ws-col-var { width: 190px; }
 .ws-switcher-color-page .ws-col-color { width: 210px; }
 .ws-switcher-color-page .ws-col-action { width: 48px; text-align: center; }
 
@@ -169,7 +169,7 @@
 	border-color: #7c5cbf !important;
 	box-shadow: 0 0 0 1px #7c5cbf !important;
 }
-.ws-switcher-color-page .ws-input-num { width: 56px; }
+.ws-switcher-color-page .ws-input-var { width: 100%; max-width: 180px; font-family: 'SF Mono', Menlo, Consolas, monospace !important; }
 .ws-switcher-color-page .ws-input-label { width: 100%; max-width: 260px; }
 .ws-switcher-color-page .ws-input-text { width: 320px; max-width: 100%; }
 .ws-switcher-color-page .ws-select { min-width: 240px; }

@@ -123,7 +123,6 @@ class AdminTest extends WebStrategyTestCase {
 		$_POST = array(
 			'ws_switcher_save' => '1',
 			'ws_save_tab'      => 'settings',
-			'ws_var_prefix'    => 'awb-color',
 			'ws_light_class'   => 'ws-light',
 			'ws_default_mode'  => 'light',
 			'ws_toggle_position' => 'top-left',
@@ -171,7 +170,7 @@ class AdminTest extends WebStrategyTestCase {
 		$_POST = array(
 			'ws_switcher_save'  => '1',
 			'ws_save_tab'       => 'mappings',
-			'ws_mapping_number' => array( '1' ),
+			'ws_mapping_var'    => array( '--awb-color8' ),
 			'ws_mapping_label'  => array( 'Fond' ),
 			'ws_mapping_dark'   => array( '#14121c' ),
 			'ws_mapping_light'  => array( '#f5f3ef' ),
@@ -209,7 +208,7 @@ class AdminTest extends WebStrategyTestCase {
 		}
 
 		$this->assertCount( 1, $captured );
-		$this->assertSame( 1, $captured[0]['number'] );
+		$this->assertSame( '--awb-color8', $captured[0]['var'] );
 		$this->assertSame( '#f5f3ef', $captured[0]['light'] );
 	}
 
