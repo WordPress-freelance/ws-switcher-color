@@ -1,0 +1,55 @@
+/**
+ * WS Color Switcher — bouton de bascule frontend.
+ */
+.ws-theme-toggle {
+	z-index: 99999;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border-radius: 50%;
+	border: 1px solid rgba( 255, 255, 255, 0.12 );
+	background: rgba( 26, 23, 36, 0.88 );
+	-webkit-backdrop-filter: blur( 8px );
+	backdrop-filter: blur( 8px );
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	line-height: 1;
+	box-shadow: 0 2px 16px rgba( 0, 0, 0, 0.35 );
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ws-theme-toggle:hover {
+	transform: scale( 1.1 );
+	box-shadow: 0 4px 24px rgba( 124, 92, 191, 0.45 );
+}
+
+/* Variante claire. */
+html.ws-light .ws-theme-toggle {
+	background: rgba( 245, 243, 239, 0.92 );
+	border-color: rgba( 0, 0, 0, 0.1 );
+	box-shadow: 0 2px 16px rgba( 0, 0, 0, 0.12 );
+}
+
+/* Positions fixes. */
+.ws-theme-toggle--bottom-right { position: fixed; bottom: 24px; right: 24px; }
+.ws-theme-toggle--bottom-left  { position: fixed; bottom: 24px; left: 24px; }
+.ws-theme-toggle--top-right    { position: fixed; top: 80px; right: 24px; }
+.ws-theme-toggle--top-left     { position: fixed; top: 80px; left: 24px; }
+
+/* Variante inline (shortcode). */
+.ws-theme-toggle--inline {
+	position: static;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	box-shadow: none;
+	background: none;
+	border: none;
+}
+.ws-theme-toggle--inline:hover {
+	transform: scale( 1.1 );
+	box-shadow: none;
+}

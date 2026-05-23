@@ -1,0 +1,189 @@
+# Copyright (C) 2026 WebStrategy
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: WS Color Switcher 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress-freelance.com\n"
+"POT-Creation-Date: 2026-05-23 07:32+0000\n"
+"PO-Revision-Date: 2026-05-23 07:32+0000\n"
+"Last-Translator: WebStrategy <support@wordpress-freelance.com>\n"
+"Language-Team: WebStrategy <support@wordpress-freelance.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: ws-switcher-color\n"
+
+#: admin/partials/ws-switcher-color-admin-settings.php:15
+msgid "Bas droite (fixe)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:16
+msgid "Bas gauche (fixe)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:17
+msgid "Haut droite (fixe)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:18
+msgid "Haut gauche (fixe)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:19
+msgid "Masqué — shortcode uniquement"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:25
+msgid "Préfixe des variables CSS"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:32
+#, php-format
+msgid "Ex : %1$s génère %2$s, etc."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:41
+msgid "Classe CSS mode light"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:48
+#, php-format
+msgid "Classe ajoutée sur la balise html en mode light. Le CSS cible %s."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:56
+msgid "Mode par défaut"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:59
+msgid "Dark (recommandé)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:60
+msgid "Light"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:62
+msgid "Mode affiché aux nouveaux visiteurs sans préférence enregistrée."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:66
+msgid "Bouton toggle"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:70
+msgid "Afficher le bouton flottant sur le frontend"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:75
+msgid "Position du bouton"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-settings.php:86
+#, php-format
+msgid ""
+"Ou placez le bouton manuellement avec le shortcode %s (bloc HTML Avada par "
+"exemple)."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:15
+msgid "Mappings couleurs"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:16
+msgid "Réglages"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:17
+msgid "CSS généré"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:25
+#: admin/class-ws-switcher-color-admin.php:54
+#: admin/class-ws-switcher-color-admin.php:55
+msgid "WS Color Switcher"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:29
+msgid "Bascule dark / light pour Avada par remappage des variables CSS."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:35
+msgid "Paramètres enregistrés."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-page.php:71
+msgid "Enregistrer"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-css.php:19
+#, php-format
+msgid ""
+"CSS injecté automatiquement dans %s. Copiez-le si vous voulez le coller "
+"manuellement ailleurs."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-css.php:28
+#: admin/class-ws-switcher-color-admin.php:111
+msgid "Copier le CSS"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-css.php:36
+#, php-format
+msgid "%d variable — générée depuis les mappings enregistrés."
+msgid_plural "%d variables — générées depuis les mappings enregistrés."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:20
+#, php-format
+msgid ""
+"Chaque ligne mappe une variable CSS %s. La colonne Dark est la valeur "
+"actuelle du site, la colonne Light la remplace quand le mode light est actif."
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:29
+msgid "N°"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:30
+msgid "Label"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:31
+msgid "Dark (valeur actuelle)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:32
+msgid "Light (override)"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:48
+msgid "Supprimer"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:57
+msgid "+ Ajouter une variable"
+msgstr ""
+
+#: admin/partials/ws-switcher-color-admin-mappings.php:63
+#, php-format
+msgid "%d variable configurée"
+msgid_plural "%d variables configurées"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-ws-switcher-color-admin.php:110
+msgid "✓ Copié !"
+msgstr ""
+
+#: admin/class-ws-switcher-color-admin.php:112
+msgid "Nouvelle variable"
+msgstr ""
+
+#: public/class-ws-switcher-color-public.php:130
+#: public/class-ws-switcher-color-public.php:142
+msgid "Basculer le thème clair / sombre"
+msgstr ""

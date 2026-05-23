@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<phpunit
+	bootstrap="tests/bootstrap-phpunit.php"
+	colors="true"
+	executionOrder="random"
+	beStrictAboutTestsThatDoNotTestAnything="false"
+	convertErrorsToExceptions="true"
+	convertWarningsToExceptions="true"
+	convertNoticesToExceptions="true">
+	<testsuites>
+		<testsuite name="unit">
+			<directory suffix="Test.php">tests/unit</directory>
+		</testsuite>
+	</testsuites>
+	<coverage>
+		<include>
+			<directory suffix=".php">includes</directory>
+			<directory suffix=".php">admin</directory>
+			<directory suffix=".php">public</directory>
+		</include>
+		<exclude>
+			<directory>admin/partials</directory>
+			<file>includes/index.php</file>
+		</exclude>
+	</coverage>
+</phpunit>
