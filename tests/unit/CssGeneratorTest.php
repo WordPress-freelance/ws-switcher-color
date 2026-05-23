@@ -96,4 +96,35 @@ class CssGeneratorTest extends WebStrategyTestCase {
 		$this->assertStringContainsString( '--awb-color1', $css );
 		$this->assertStringContainsString( 'html.ws-light', $css );
 	}
+
+	public function test_no_important_by_default() {
+		$css = WS_Switcher_Color_CSS_Generator::generate(
+			array( array( 'number' => 1, 'light' => '#abcdef' ) ),
+			$this->settings()
+		);
+		$this->assertStringContainsString( '--awb-color1: #abcdef;', $css );
+		$this->assertStringNotContainsString( '!important', $css );
+	}
+
+	public function test_force_important_appends_bang_on_every_variable() {
+		$css = WS_Switcher_Color_CSS_Generator::generate(
+			array(
+				array( 'number' => 1, 'light' => '#111111' ),
+				array( 'number' => 2, 'light' => '#222222' ),
+			),
+			$this->settings( array( 'force_important' => true ) )
+		);
+		$this->assertStringContainsString( '--awb-color1: #111111 !important;', $css );
+		$this->assertStringContainsString( '--awb-color2: #222222 !important;', $css );
+		$this->assertSame( 2, substr_count( $css, '!important' ) );
+	}
+
+	public function test_force_important_false_keeps_plain_declarations() {
+		$css = WS_Switcher_Color_CSS_Generator::generate(
+			array( array( 'number' => 1, 'light' => '#abcdef' ) ),
+			$this->settings( array( 'force_important' => false ) )
+		);
+		$this->assertStringContainsString( '--awb-color1: #abcdef;', $css );
+		$this->assertStringNotContainsString( '!important', $css );
+	}
 }

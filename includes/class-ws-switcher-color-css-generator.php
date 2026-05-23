@@ -29,6 +29,7 @@ class WS_Switcher_Color_CSS_Generator {
 
 		$prefix = isset( $settings['var_prefix'] ) ? $settings['var_prefix'] : 'awb-color';
 		$class  = isset( $settings['light_class'] ) ? $settings['light_class'] : 'ws-light';
+		$bang   = ! empty( $settings['force_important'] ) ? ' !important' : '';
 
 		$lines   = array();
 		$lines[] = "html.{$class} {";
@@ -37,9 +38,9 @@ class WS_Switcher_Color_CSS_Generator {
 			if ( ! isset( $m['number'], $m['light'] ) ) {
 				continue;
 			}
-			$number = (int) $m['number'];
-			$value  = $m['light'];
-			$lines[] = "  --{$prefix}{$number}: {$value};";
+			$number  = (int) $m['number'];
+			$value   = $m['light'];
+			$lines[] = "  --{$prefix}{$number}: {$value}{$bang};";
 		}
 
 		$lines[] = '}';

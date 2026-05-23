@@ -53,6 +53,7 @@ class DefaultsTest extends WebStrategyTestCase {
 		$this->assertSame( 'dark', $settings['default_mode'] );
 		$this->assertSame( 'bottom-right', $settings['toggle_position'] );
 		$this->assertTrue( $settings['toggle_enabled'] );
+		$this->assertFalse( $settings['force_important'] );
 	}
 
 	public function test_positions_constant_includes_hidden() {

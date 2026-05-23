@@ -178,6 +178,7 @@ class WS_Switcher_Color_Admin {
 				'default_mode'    => isset( $_POST['ws_default_mode'] ) ? wp_unslash( $_POST['ws_default_mode'] ) : '',
 				'toggle_position' => isset( $_POST['ws_toggle_position'] ) ? wp_unslash( $_POST['ws_toggle_position'] ) : '',
 				'toggle_enabled'  => isset( $_POST['ws_toggle_enabled'] ) ? $_POST['ws_toggle_enabled'] : '',
+				'force_important' => isset( $_POST['ws_force_important'] ) ? $_POST['ws_force_important'] : '',
 			);
 			$settings = WS_Switcher_Color_Sanitizer::settings( $raw );
 			update_option( WS_SWITCHER_COLOR_OPT_SETTINGS, $settings );

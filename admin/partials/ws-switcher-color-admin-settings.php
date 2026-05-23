@@ -90,5 +90,15 @@ $ws_positions = array(
 				</p>
 			</td>
 		</tr>
+		<tr>
+			<th><?php esc_html_e( 'Forcer le CSS', 'ws-switcher-color' ); ?></th>
+			<td>
+				<label class="ws-checkbox">
+					<input type="checkbox" name="ws_force_important" value="1" <?php checked( ! empty( $settings['force_important'] ) ); ?>>
+					<?php esc_html_e( 'Ajouter !important sur toutes les variables (mode test)', 'ws-switcher-color' ); ?>
+				</label>
+				<p class="ws-desc"><?php esc_html_e( 'À activer si le thème ou Avada redéfinit les couleurs avec une priorité plus forte et que la bascule ne prend pas. À laisser désactivé en temps normal.', 'ws-switcher-color' ); ?></p>
+			</td>
+		</tr>
 	</table>
 </div>

@@ -93,4 +93,34 @@ class SaveFlowTest extends WP_UnitTestCase {
 		$this->assertStringContainsString( '#f5f3ef', $css );
 		$this->assertStringContainsString( 'ws-light', $css );
 	}
+
+	/**
+	 * Le réglage force_important persisté se répercute dans le CSS généré.
+	 */
+	public function test_force_important_persisted_reaches_css() {
+		$mappings = WS_Switcher_Color_Sanitizer::mappings(
+			array( '1' ),
+			array( 'Fond' ),
+			array( '#14121c' ),
+			array( '#ffffff' )
+		);
+		$settings = WS_Switcher_Color_Sanitizer::settings(
+			array(
+				'var_prefix'      => 'awb-color',
+				'force_important' => '1',
+			)
+		);
+		update_option( WS_SWITCHER_COLOR_OPT_MAPPINGS, $mappings );
+		update_option( WS_SWITCHER_COLOR_OPT_SETTINGS, $settings );
+		wp_cache_flush();
+
+		$stored = get_option( WS_SWITCHER_COLOR_OPT_SETTINGS );
+		$this->assertTrue( $stored['force_important'] );
+
+		$css = WS_Switcher_Color_CSS_Generator::generate(
+			get_option( WS_SWITCHER_COLOR_OPT_MAPPINGS ),
+			$stored
+		);
+		$this->assertStringContainsString( '#ffffff !important;', $css );
+	}
 }

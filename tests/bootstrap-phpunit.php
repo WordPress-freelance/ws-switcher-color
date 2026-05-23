@@ -31,7 +31,7 @@ if ( ! defined( 'WEEK_IN_SECONDS' ) ) {
 	define( 'WEEK_IN_SECONDS', 604800 );
 }
 
-define( 'WS_SWITCHER_COLOR_VERSION', '1.1.0' );
+define( 'WS_SWITCHER_COLOR_VERSION', '1.2.0' );
 define( 'WS_SWITCHER_COLOR_SLUG', 'ws-switcher-color' );
 define( 'WS_SWITCHER_COLOR_FILE', dirname( __DIR__ ) . '/ws-switcher-color.php' );
 define( 'WS_SWITCHER_COLOR_PATH', dirname( __DIR__ ) . '/' );

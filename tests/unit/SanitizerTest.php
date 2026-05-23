@@ -82,4 +82,14 @@ class SanitizerTest extends WebStrategyTestCase {
 		$out = WS_Switcher_Color_Sanitizer::settings( array() );
 		$this->assertFalse( $out['toggle_enabled'] );
 	}
+
+	public function test_settings_force_important_enabled_when_present() {
+		$out = WS_Switcher_Color_Sanitizer::settings( array( 'force_important' => '1' ) );
+		$this->assertTrue( $out['force_important'] );
+	}
+
+	public function test_settings_force_important_disabled_when_absent() {
+		$out = WS_Switcher_Color_Sanitizer::settings( array() );
+		$this->assertFalse( $out['force_important'] );
+	}
 }

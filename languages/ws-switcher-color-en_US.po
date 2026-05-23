@@ -2,10 +2,10 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: WS Color Switcher 1.1.0\n"
+"Project-Id-Version: WS Color Switcher 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress-freelance.com\n"
-"POT-Creation-Date: 2026-05-23 07:32+0000\n"
-"PO-Revision-Date: 2026-05-23 07:32+0000\n"
+"POT-Creation-Date: 2026-05-23 08:31+0000\n"
+"PO-Revision-Date: 2026-05-23 08:31+0000\n"
 "Last-Translator: WebStrategy <support@wordpress-freelance.com>\n"
 "Language-Team: WebStrategy <support@wordpress-freelance.com>\n"
 "Language: en_US\n"
@@ -85,6 +85,18 @@ msgstr "Button position"
 #, php-format
 msgid "Ou placez le bouton manuellement avec le shortcode %s (bloc HTML Avada par exemple)."
 msgstr "Or place the button manually with the %s shortcode (Avada HTML block for example)."
+
+#: admin/partials/ws-switcher-color-admin-settings.php:94
+msgid "Forcer le CSS"
+msgstr "Force the CSS"
+
+#: admin/partials/ws-switcher-color-admin-settings.php:98
+msgid "Ajouter !important sur toutes les variables (mode test)"
+msgstr "Add !important to every variable (test mode)"
+
+#: admin/partials/ws-switcher-color-admin-settings.php:100
+msgid "À activer si le thème ou Avada redéfinit les couleurs avec une priorité plus forte et que la bascule ne prend pas. À laisser désactivé en temps normal."
+msgstr "Enable this if the theme or Avada redefines the colors with higher priority and the switch has no effect. Leave it off under normal conditions."
 
 #: admin/partials/ws-switcher-color-admin-page.php:15
 msgid "Mappings couleurs"

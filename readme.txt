@@ -4,7 +4,7 @@ Tags: dark mode, light mode, avada, color switcher, css variables
 Requires at least: 5.6
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,9 @@ Yes. The selected mode is stored in localStorage and re-applied before the page 
 
 == Changelog ==
 
+= 1.2.0 =
+* New "Force CSS" setting: adds !important to every generated variable, to override themes that redefine the colors with higher priority.
+
 = 1.1.0 =
 * Full rewrite on the WPPB architecture (separate admin / public / includes layers).
 * Business logic extracted into testable classes (defaults, CSS generator, sanitizer).
@@ -79,6 +82,9 @@ Yes. The selected mode is stored in localStorage and re-applied before the page 
 * Initial release: dark / light switcher for Avada, floating button, shortcode, anti-FOUC, localStorage persistence.
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+Adds an optional "Force CSS" toggle. Existing mappings and settings are preserved.
 
 = 1.1.0 =
 Internal rewrite. Your existing mappings and settings are preserved. No action required.

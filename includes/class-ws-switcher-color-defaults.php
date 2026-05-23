@@ -140,6 +140,7 @@ class WS_Switcher_Color_Defaults {
 			'default_mode'    => 'dark',
 			'toggle_position' => 'bottom-right',
 			'toggle_enabled'  => true,
+			'force_important' => false,
 		);
 	}
 }

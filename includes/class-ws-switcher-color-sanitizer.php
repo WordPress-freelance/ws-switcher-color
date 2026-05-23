@@ -68,6 +68,7 @@ class WS_Switcher_Color_Sanitizer {
 			'default_mode'    => in_array( $mode_in, WS_Switcher_Color_Defaults::MODES, true ) ? $mode_in : 'dark',
 			'toggle_position' => in_array( $position_in, WS_Switcher_Color_Defaults::POSITIONS, true ) ? $position_in : 'bottom-right',
 			'toggle_enabled'  => ! empty( $raw['toggle_enabled'] ),
+			'force_important' => ! empty( $raw['force_important'] ),
 		);
 	}
 }
