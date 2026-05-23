@@ -18,6 +18,11 @@
         "mockery/mockery": "^1.6",
         "yoast/phpunit-polyfills": "^2.0"
     },
+    "autoload-dev": {
+        "psr-4": {
+            "WS_Switcher_Color\\Tests\\Unit\\": "tests/unit/"
+        }
+    },
     "scripts": {
         "test": "phpunit -c phpunit.xml",
         "test:integration": "phpunit -c phpunit-integration.xml"

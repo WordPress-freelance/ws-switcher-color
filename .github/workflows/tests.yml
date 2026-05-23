@@ -59,7 +59,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y subversion default-mysql-client
 
       - name: Install WP test suite + WP core
-        run: bash bin/install-wp-tests.sh wp_test root root 127.0.0.1:3306 latest
+        run: bash bin/install-wp-tests.sh wp_test root root 127.0.0.1:3306 latest true
 
       - name: Composer install
         run: composer install --no-progress --prefer-dist
